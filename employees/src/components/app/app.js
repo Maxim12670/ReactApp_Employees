@@ -42,12 +42,14 @@ class App extends Component {
             like: false,
             id: this.maxIndex++
         }
-        this.setState(({ data }) => {
-            const newArray = [...data, newItem];
-            return {
-                data: newArray
-            }
-        })
+        if(name.length > 3 && salary > 0){
+            this.setState(({ data }) => {
+                const newArray = [...data, newItem];
+                return {
+                    data: newArray
+                }
+            })
+        }
     }
 
     onToggleIncrease = (id) => {
